@@ -1,0 +1,17 @@
+1 - Crie uma classe chamada Restaurante. O método __init__() de Restaurante deve
+ armazenar dois atributos: restaurante_nome tipo_cozinha. Crie um método chamado
+ restaurante_descricao() que mostre essas duas informações, e um método de nome
+ restaurante_aberto() que exiba uma mensagem informando que o restaurante está aberto.
+ Crie uma instância chamada a partir da sua classe. Mostre os dois atributos
+ individualmente e, em seguida, chame os dois métodos.
+
+2 - Três restaurantes: Comece com a classe do exercício anterior. Crie três instâncias
+diferentes da classe e chame restaurante_descricao() para cada instância.
+
+3 - Usuários: Crie uma classe chamada Usuario. Crie dois atributos de nomes primeiro_nome
+e ultimo_nome e, então, crie vários outros atributos normalmente armazenados em um perfil
+de usuário. Escreva um método de nome descricao_usuario() que apresente um resumo das
+informações do usuário. Escreva outro método chamado saudacao_usuario() que mostre uma
+saudação personalizada ao usuário.
+    Crie várias instâncias que representem diferentes usuários e chame os dois métodos
+para cada usuário.

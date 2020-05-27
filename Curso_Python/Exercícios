@@ -1,0 +1,22 @@
+Exercícios:
+
+1 - Crie um programa para elaborar uma lista de convidados de uma festa,
+o programa irá perguntar o nome do convidado, você digitará o nome e ao
+terminar a lista, o programa irá exibir a lista em ordem alfabética. Insira até 10 nomes.
+
+2 - Crie um dicionário, você irá inserir palavras e significados para estas palavras,
+ao executar o programa, o usuário será perguntado qual palavra ele quer saber o
+significado. Caso a palavra esteja no dicionário, ele apresentará o significado desta
+palavra na tela, caso não esteja, ele irá exibir uma mensagem, dizendo que não possui
+a palavra em seu dicionário.
+
+3 - Crie uma calculadora com 4 operações, div, sub, som, mult, que pergunte ao usuário
+qual operação ele deseja fazer e peça os números que serão calculados, em seguida
+mostre o resultado da operação na tela, sendo que as funções utilizadas no programa
+estejam em um módulo separado do arquivo principal.
+
+4 - Crie um joguinho de par ou ímpar, o programa irá perguntar ao primeiro jogador se ele
+quer par ou ímpar e vai pedir um número, logo pedirá ao segundo
+jogador outro número, fará a soma, utilizando o mesmo módulo do exercício anterior,
+e dirá se o resultado é par ou ímpar, exibindo uma mensagem de parabéns ao
+vencedor daquela partida.
