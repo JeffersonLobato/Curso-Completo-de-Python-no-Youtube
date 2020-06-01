@@ -1,4 +1,3 @@
-import sys
 import pygame
 from settings import Settings
 from ship import Ship
@@ -23,9 +22,6 @@ def run_game():
         gf.update_bullets(bullets)
         gf.update_screen(ai_settings, screen, ship, bullets)
 
-
-
-        print(len(bullets))
 
 
 run_game()
