@@ -2,6 +2,7 @@ import sys
 import pygame
 from bullet import Bullet
 from alien import Alien
+from time import sleep
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
     """Responde a pressionamentos de tecla."""
@@ -125,11 +126,56 @@ def change_fleet_direction(ai_settings, aliens):
         alien.rect.y += ai_settings.fleet_drop_speed
     ai_settings.fleet_direction *= -1
 
-def update_aliens(ai_settings, ship, aliens):
+
+def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
+    """Responde ao fato de a espaçonave ter sido atingida por um alienígena."""
+
+    if stats.ships_left > 0:
+       
+        # Decrementa ships_left
+        stats.ships_left -= 1
+
+        # Esvazia a lista de alienígenas e de projéteis
+        aliens.empty()
+        bullets.empty()
+
+        # Cria uma nova frota e centraliza a espaçonave
+
+        create_fleet(ai_settings, screen, ship, aliens)
+        ship.center_ship()
+
+        # Faz uma pausa
+        sleep(0.5)
+    
+    else:
+        stats.game_active = False
+
+
+def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
+    """Verifica se algum alienígena alcançou a parte inferior da tela."""
+    screen_rect = screen.get_rect()
+    
+    for alien in aliens.sprites():
+        if alien.rect.bottom >= screen_rect.bottom:
+            # Tra esse caso do mesmo modo que é feito quando a espaçonave é atingida
+            ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+            break
+
+def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     """Verifica se a frota está em uma das bordas e então tualiza as posições de todos os alienígenas da frota."""
     check_fleet_edges(ai_settings, aliens)
     aliens.update()
 
     # Verifica se houve colisões entre alienígenas e a espaçonave
     if pygame.sprite.spritecollideany(ship, aliens):
-        print("Colidiu")
+        ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+
+    # Verifica se há algum alienígena que atingiu a parte inferior da tela
+    check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets)
+
+
+
+
+
+
+
